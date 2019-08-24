@@ -5,6 +5,7 @@ from django.utils.crypto import get_random_string
 
 from celery import shared_task
 
+#asincro task
 @shared_task
 def print_lot_of_times(someData, someData1):
     f= open("testfile.txt","w+")
@@ -12,9 +13,11 @@ def print_lot_of_times(someData, someData1):
         f.write("This is text111111 ")
        
 
+#periodic function that is beating
 @shared_task
-def add(a, b):
+def this_is_periodic_task_function(a, b):
     f= open("testfile11.txt","a")
     for i in range(5):
-        f.write("This is tex3 ")
+        f.write(a)
+        f.write(b)
     

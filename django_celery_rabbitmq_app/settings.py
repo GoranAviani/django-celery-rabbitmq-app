@@ -132,10 +132,12 @@ CELERY_BROKER_URL = 'amqp://127.0.0.1'
 
 from celery.schedules import crontab
 
+
+#beat settings for fun with args
 CELERY_BEAT_SCHEDULE = {
-    'task-add': {
-        'task': 'myapp.tasks.add',
+    'task-this_is_periodic_task_function': {
+        'task': 'myapp.tasks.this_is_periodic_task_function',
         'schedule': 15,
-        'args': (4, 5)
+        'args': ("word one ", "word two ")
     },
 }

@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from .tasks import print_lot_of_times
 
 
+#calling asincro task
 def do_a_celery_task(request):
     print_lot_of_times.delay("test text", 10)
     return HttpResponse('do_a_celery_task')
