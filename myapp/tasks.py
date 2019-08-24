@@ -20,11 +20,12 @@ def this_is_periodic_task_function(a, b):
     for i in range(5):
         f.write(a)
         f.write(b)
-    
+
+import time    
 @shared_task
 def this_is_periodic_task_function_no_args():
-    f= open("testfile22.txt","w+")
+    f= open("testfile22.txt","a")
     for i in range(5):
-        f.write("test text")
+        f.write(str(time.ctime()))
         
     
