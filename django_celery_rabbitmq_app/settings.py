@@ -140,6 +140,11 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': 1,
         'args': ("word one ", "word two ")
     },
+      'task-this_is_periodic_task_function_no_args': {
+        'task': 'myapp.tasks.this_is_periodic_task_function_no_args',
+        'schedule': 1,
+        'args': (), 
+    },
 }
 
 #Celery requires both of the worker and the beat in order for tasks to execute as planned. When developing, use this command:

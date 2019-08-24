@@ -21,3 +21,10 @@ def this_is_periodic_task_function(a, b):
         f.write(a)
         f.write(b)
     
+@shared_task
+def this_is_periodic_task_function_no_args():
+    f= open("testfile22.txt","w+")
+    for i in range(5):
+        f.write("test text")
+        
+    
