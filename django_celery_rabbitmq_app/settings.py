@@ -137,12 +137,12 @@ from celery.schedules import crontab
 CELERY_BEAT_SCHEDULE = {
     'task-this_is_periodic_task_function': {
         'task': 'myapp.tasks.this_is_periodic_task_function',
-        'schedule': 1,
+        'schedule': 15,
         'args': ("word one ", "word two ")
     },
       'task-this_is_periodic_task_function_no_args': {
         'task': 'myapp.tasks.this_is_periodic_task_function_no_args',
-        'schedule': 1,
+        'schedule': crontab(hour=11, minute=38), # UTC/GMT -2 hours for me 
         'args': (), 
     },
 }
