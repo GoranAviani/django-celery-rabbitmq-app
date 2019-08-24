@@ -137,7 +137,17 @@ from celery.schedules import crontab
 CELERY_BEAT_SCHEDULE = {
     'task-this_is_periodic_task_function': {
         'task': 'myapp.tasks.this_is_periodic_task_function',
-        'schedule': 15,
+        'schedule': 1,
         'args': ("word one ", "word two ")
     },
 }
+
+#Celery requires both of the worker and the beat in order for tasks to execute as planned. When developing, use this command:
+#celery -A django_celery_rabbitmq_app worker -l info -B
+
+
+#It will start both simultaneously. But, this method is discouraged for a production environment. For the production environment, each of the worker and the beat service should be started separately by the following commands:
+
+#celery -A django_celery_rabbitmq_app worker -l info
+#celery -A django_celery_rabbitmq_app beat -l info
+
