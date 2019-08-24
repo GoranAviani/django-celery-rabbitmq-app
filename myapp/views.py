@@ -10,4 +10,4 @@ from .tasks import print_lot_of_times
 
 def do_a_celery_task(request):
     print_lot_of_times.delay("test text", 10)
-    
+    return HttpResponse('do_a_celery_task')

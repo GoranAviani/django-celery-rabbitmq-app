@@ -7,6 +7,8 @@ from celery import shared_task
 
 @shared_task
 def print_lot_of_times(someData, someData1):
+    f= open("testfile.txt","w+")
     for i in range(someData1):
-        print(someData)
-    return HttpResponse('do_a_celery_task')
+        f.write("This is text111111 ")
+       
+    
