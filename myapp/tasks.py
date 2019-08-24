@@ -11,4 +11,10 @@ def print_lot_of_times(someData, someData1):
     for i in range(someData1):
         f.write("This is text111111 ")
        
+
+@shared_task
+def add(a, b):
+    f= open("testfile11.txt","a")
+    for i in range(5):
+        f.write("This is tex3 ")
     

@@ -129,3 +129,13 @@ STATIC_URL = '/static/'
 
 CELERY_BROKER_URL = 'amqp://127.0.0.1'
 #BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+
+from celery.schedules import crontab
+
+CELERY_BEAT_SCHEDULE = {
+    'task-add': {
+        'task': 'myapp.tasks.add',
+        'schedule': 15,
+        'args': (4, 5)
+    },
+}
