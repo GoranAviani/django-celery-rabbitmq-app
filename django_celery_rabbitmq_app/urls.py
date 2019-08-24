@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from myapp.views import do_a_celery_task
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('celery-task/', do_a_celery_task),
+    
 ]
+

@@ -125,4 +125,7 @@ STATIC_URL = '/static/'
 
 
 
-CELERY_BROKER_URL = 'amqp://localhost'
+
+
+CELERY_BROKER_URL = 'amqp://127.0.0.1'
+#BROKER_URL = 'amqp://guest:guest@localhost:5672/'
